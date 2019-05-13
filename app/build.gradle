@@ -10,7 +10,9 @@ android {
     dexOptions {
         javaMaxHeapSize "3g"
     }
-
+    lintOptions {
+        abortOnError false
+    }
     defaultConfig {
         applicationId "bf.io.openshop"
         minSdkVersion 15
@@ -99,13 +101,9 @@ buildscript {
 apply plugin: "com.browserstack.gradle"
 
 browserStackConfig {
-    username = "sasi.batchu@publicissapient.com"
+    username = "sasikiranbatchu1"
     accessKey = "tZqHvk2zj6y7gpiaSpQJ"
-    devices = ['Samsung Galaxy S8-7.0']
+    devices = ['Google Pixel-7.1']
 }
 
 apply plugin: 'com.google.gms.google-services'
-
-
-
-
