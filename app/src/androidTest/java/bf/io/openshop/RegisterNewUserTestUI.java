@@ -54,4 +54,32 @@ public class RegisterNewUserTestUI {
         Thread.sleep(15000);
 
     }
+    
+    @Test
+    public void searchAndAddToCart() throws Exception{
+        Thread.sleep(500);
+        onView(withContentDescription("Open navigation drawer")).perform(click());
+        Thread.sleep(500);
+        onView(withId(R.id.navigation_drawer_list_header_text)).perform(click());
+        Thread.sleep(500);
+        // Check the All buttons is presence or not under profile screen
+          onView(withId(R.id.account_dispensing_places)).check(matches(isDisplayed()));
+          onView(withId(R.id.account_settings)).check(matches(isDisplayed()));
+          onView(withId(R.id.account_login_logout_btn)).check(matches(isDisplayed()));
+          Thread.sleep(500);
+          onView(withId(R.id.action_search)).perform(click());
+          Thread.sleep(20000);
+
+          onView (withId(R.id.account_dispensing_places)).perform(click());
+          Thread.sleep(10000);
+          ViewActions.pressBack();
+          onView(withId(R.id.shipping_dialog_close)).perform(click());
+          Thread.sleep(10000);
+          onView(withId(R.id.account_settings)).perform(click());
+          Thread.sleep(10000);
+
+          Thread.sleep(10000);
+          ViewActions.pressBack();
+
+    }
 }
